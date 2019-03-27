@@ -1,16 +1,17 @@
 <?php
 // Initialize the session
 session_start();
- 
 // Check if the user is already logged in, if yes then redirect him to welcome page
-//if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
-    //header("location: index.php");
-    //exit;
-//}
+if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
+    header("location: menu.php");
+    exit;
+}
  
 // Include config file
 require_once "../config.php";
- 
+
+//echo "finished require";
+
 // Define variables and initialize with empty values
 $username = $password = "";
 $username_err = $password_err = "";
@@ -37,6 +38,8 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         // Prepare a select statement
         $sql = "SELECT id, username, password FROM users WHERE username = :username";
         
+        //echo $sql;
+        
         if($stmt = $pdo->prepare($sql)){
             // Bind variables to the prepared statement as parameters
             $stmt->bindParam(":username", $param_username, PDO::PARAM_STR);
@@ -62,7 +65,8 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                             $_SESSION["username"] = $username;                            
                             
                             // Redirect user to welcome page
-                            header("location: index.php");
+                            header("location: menu.php");
+                            exit;
                         } else{
                             // Display an error message if password is not valid
                             $password_err = "The password you entered was not valid.";

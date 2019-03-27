@@ -58,32 +58,35 @@
 
 <?php include "templates/header.php"; ?>
 
-<?php if (isset($_POST['submit']) && $statement) : ?>
-	<p>Movie successfully updated.</p>
-<?php endif; ?>
+<div class="container">
+    <div class="row">
 
-<h2>Edit a Movie</h2>
+        <?php if (isset($_POST['submit']) && $statement) : ?>
+        <p>Movie successfully updated.</p>
+        <?php endif; ?>
 
-<form method="post">
-    
-    <label for="id">ID</label>
-    <input type="text" name="id" id="id" value="<?php echo ($work['id']); ?>" >
-    
-    <label for="title">Movie Title</label>
-    <input type="text" name="title" id="title" value="<?php echo $work['title']; ?>">
+        <h2>Edit a Movie</h2>
 
-    <label for="year">Year Released</label>
-    <input type="text" name="year" id="year" value="<?php echo $work['year']; ?>">
+        <form method="post">
 
-    <label for="genre">Genre</label>
-    <input type="text" name="genre" id="genre" value="<?php echo $work['genre']; ?>">
+            <label for="id">ID</label>
+            <input type="text" name="id" id="id" value="<?php echo ($work['id']); ?>">
 
-    <label for="rating">Rating</label>
-    <input type="text" name="rating" id="rating" value="<?php echo $work['rating']; ?>">
+            <label for="title">Movie Title</label>
+            <input type="text" name="title" id="title" value="<?php echo $work['title']; ?>">
 
-    <input type="submit" name="submit" value="Save">
+            <label for="year">Year Released</label>
+            <input type="text" name="year" id="year" value="<?php echo $work['year']; ?>">
 
-</form>
+            <label for="genre">Genre</label>
+            <input type="text" name="genre" id="genre" value="<?php echo $work['genre']; ?>">
+
+            <label for="rating">Rating</label>
+            <input type="text" name="rating" id="rating" value="<?php echo $work['rating']; ?>">
+            <br>
+            <input type="submit" name="submit" value="Save">
+
+        </form>
 
 
-<?php include "templates/footer.php"; ?>
+        <?php include "templates/footer.php"; ?>

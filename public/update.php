@@ -33,7 +33,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
 <div class="container">
     <div class="row">
 
-        <h2>Results</h2>
+        <h2>Edit</h2>
 
         <?php foreach($result as $row) { ?>
 

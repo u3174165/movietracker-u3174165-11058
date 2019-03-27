@@ -1,8 +1,8 @@
 <?php
 
-    $host = "u3174165.epizy.com";
+    $host = "sql101.epizy.com";
     $username = "epiz_23664270";
-    $password = " YhidauJFiqzkz ";
+    $password = "YhidauJFiqzkz";
     $dbname = "epiz_23664270_movie_tracker_app";
     $dsn = "mysql:host=$host;dbname=$dbname";
     $options = array (
